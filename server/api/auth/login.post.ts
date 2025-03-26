@@ -22,7 +22,7 @@ interface User {
   _comment?: string;
 }
 
-const usersFilePath = path.resolve('./server/data/users.json');
+const usersFilePath = path.resolve(process.cwd(), 'server/data/users.json');
 
 export default defineEventHandler(async (event) => {
   try {
