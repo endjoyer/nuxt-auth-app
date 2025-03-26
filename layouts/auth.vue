@@ -1,5 +1,5 @@
 <template>
-  <div class="auth-layout">
+  <div class="page-wrapper">
     <div class="auth-container">
       <div class="auth-logo">
         <h1>Auth App</h1>
@@ -13,18 +13,11 @@
 </template>
 
 <style lang="scss" scoped>
-.auth-layout {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f8fa;
-}
-
 .auth-container {
   width: 100%;
   max-width: 480px;
   padding: 0 1rem;
+  margin: auto;
 }
 
 .auth-logo {

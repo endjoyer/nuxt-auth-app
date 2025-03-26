@@ -71,16 +71,17 @@ export const useAuthStore = defineStore('auth', {
     logout() {
       this.user = null;
       this.isLoggedIn = false;
-      localStorage.removeItem('authUser');
+      localStorage.removeItem('auth');
     },
 
     initAuth() {
       if (process.client) {
-        const savedUser = localStorage.getItem('authUser');
-        if (savedUser) {
+        const savedAuth = localStorage.getItem('auth');
+        if (savedAuth) {
           try {
-            this.user = JSON.parse(savedUser);
-            this.isLoggedIn = true;
+            const parsedAuth = JSON.parse(savedAuth);
+            this.user = parsedAuth.user;
+            this.isLoggedIn = parsedAuth.isLoggedIn;
           } catch (e) {
             console.error('Ошибка при восстановлении сессии:', e);
             this.logout();
